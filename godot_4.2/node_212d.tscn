@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwu64opj3anew"]
+
+[ext_resource type="Texture2D" uid="uid://bm6ace0kltcs4" path="res://sprite/ui/btn_normal.png" id="3_5cswg"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_pd3gh"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RecordSystem" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VoiceSystem" type="Node" parent="RecordSystem"]
+
+[node name="AudioStreamRecord" type="AudioStreamPlayer" parent="RecordSystem"]
+stream = SubResource("AudioStreamMicrophone_pd3gh")
+autoplay = true
+bus = &"Record"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="RecordSystem"]
+
+[node name="TextEdit" type="TextEdit" parent="RecordSystem"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "123214"
+
+[node name="RecordButton" type="TextureButton" parent="RecordSystem"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("3_5cswg")
+
+[node name="Status" type="Label" parent="RecordSystem"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

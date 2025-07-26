@@ -157,6 +157,6 @@ texture = ExtResource("2_cduun")
 [resource]
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
-terrain_set_0/terrain_0/color = Color(0.5504, 0.64, 0.41599998, 1)
+terrain_set_0/terrain_0/color = Color(0.5504, 0.64, 0.416, 1)
 sources/0 = SubResource("TileSetAtlasSource_kk4os")
 sources/1 = SubResource("TileSetAtlasSource_fpulh")

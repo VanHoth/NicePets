@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=3 uid="uid://cayomkq0r6p4g"]
+
+[ext_resource type="Script" uid="uid://b4lkbwl6gw7a1" path="res://scene/audio_stream_record.gd" id="1_mx0kw"]
+[ext_resource type="Script" uid="uid://8xrw43f6mcxs" path="res://scene/voice_system.gd" id="2_w4oxd"]
+[ext_resource type="FontFile" uid="uid://c1xw5rqs67ghh" path="res://asset/RawFont/AaXiangSuJiangHu-Ben-2.ttf" id="3_fsbdh"]
+[ext_resource type="Texture2D" uid="uid://bm6ace0kltcs4" path="res://sprite/ui/btn_normal.png" id="4_n6wdb"]
+[ext_resource type="Texture2D" uid="uid://djgaua351yont" path="res://sprite/ui/btn_click.png" id="5_g3huw"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_sypnp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cb6ix"]
+font = ExtResource("3_fsbdh")
+font_size = 10
+font_color = Color(1, 1, 1, 0.796078)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="RecordSystem" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mx0kw")
+
+[node name="VoiceSystem" type="Node" parent="RecordSystem"]
+script = ExtResource("2_w4oxd")
+
+[node name="AudioStreamRecord" type="AudioStreamPlayer" parent="RecordSystem"]
+stream = SubResource("AudioStreamMicrophone_sypnp")
+autoplay = true
+bus = &"Record"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="RecordSystem"]
+autoplay = true
+
+[node name="TextEdit" type="TextEdit" parent="RecordSystem"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+theme_override_colors/background_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("3_fsbdh")
+placeholder_text = "Talk to Cat"
+
+[node name="RecordButton" type="TextureButton" parent="RecordSystem"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -71.0
+offset_right = 20.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_n6wdb")
+texture_pressed = ExtResource("5_g3huw")
+stretch_mode = 3
+
+[node name="Status" type="Label" parent="RecordSystem"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -37.5
+offset_top = -82.0
+offset_right = 37.5
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "recording"
+label_settings = SubResource("LabelSettings_cb6ix")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -39.0
+offset_top = -92.0
+offset_right = 38.0
+offset_bottom = -68.0
+text = "嘿 嘿 咪 咪"
