@@ -16,7 +16,7 @@ var http_request = null
 
 
 @onready var emoji: AnimatedSprite2D = $"../../../Body/Emoji"
-@onready var body: AnimatedSprite2D = $"../../../Body"
+@onready var body: Cat = $"../../../Body"
 
 
 func _ready():
@@ -123,26 +123,25 @@ func changeMovement(index):
 	print("match",index)
 	match index:
 		"10":
-			body.play("idle")
-
+		
 			pass
 		"11":
-			body.play("move")
+			body.ToMove(body.food.global_position)
 			pass
 		"12":
-			body.play("move")
+			body.ToMove(body.mao_wo.global_position)
 			pass
 		"13":
-			body.play("move")
+			body.ToMove(body.mao_sha.global_position)
 			pass
 		"14":
-			body.play("idle")
+			body.ToIdle()
 			pass
 		"15":
-			body.play("idle")
+			body.ToIdle()
 			pass		
 		"16":
-			body.play("move")
+			body.ToMove(body.close.global_position)
 			pass			
 			
 

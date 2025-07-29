@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3eur0pmgpkfm"]
+
+[ext_resource type="Texture2D" uid="uid://bm6ace0kltcs4" path="res://sprite/ui/btn_normal.png" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://dpijfeqv6s3ds" path="res://sprite_2d.gd" id="2_epypp"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0e48y")
+script = ExtResource("2_epypp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 54.0
+offset_top = 16.0
+offset_right = 94.0
+offset_bottom = 39.0
+text = "1234"
